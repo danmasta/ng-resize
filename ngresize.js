@@ -27,8 +27,7 @@ var ngResize = angular.module('ngResize', []);
 ngResize.factory('resize', ['$window', '$interval', '$rootScope', function($window, $interval, $rootScope) {
   return {
     check: function() {
-      if (angular.isUndefined($rootScope.catchResize))
-        return false;
+      if (angular.isUndefined($rootScope.catchResize)) return false;
       return $rootScope.catchResize;
     },
     bind: function() {
