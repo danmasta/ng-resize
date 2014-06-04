@@ -1,0 +1,7 @@
+/*resize test css*/
+[data-message]{ position:fixed; top:0; left:0; width:100%;}
+[data-message] .message{ max-width:75%; margin:0 auto; text-align:center;}
+[data-message] .message span{ margin-left:10px; white-space:nowrap;}
+[data-message] .message span:first-child{ margin-left:0;}
+[resize-test]{ list-style:none; padding:0; margin:0;}
+[resize-test] li{ margin:10px 0; padding:20px; border:1px solid #ddd;}
