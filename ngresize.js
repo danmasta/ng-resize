@@ -50,7 +50,7 @@ ngResize.factory('resize', ['$window', '$interval', '$rootScope', function($wind
         }
         resized = true;
       });
-      w.resize();
+      w.triggerHandler('resize');
       $rootScope.catchResize = true;
     },
     set: function(){
