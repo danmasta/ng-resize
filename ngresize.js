@@ -26,11 +26,11 @@ var ngResize = angular.module('ngResize', []);
 // by all child scopes
 ngResize.factory('resize', ['$window', '$interval', '$rootScope', function($window, $interval, $rootScope) {
   return {
-    check: function() {
+    checkBind: function() {
       if (angular.isUndefined($rootScope.catchResize)) return false;
       return $rootScope.catchResize;
     },
-    bind: function() {
+    setBind: function() {
       var w = angular.element($window);
       var resizeThrottle = 100;
       var resized = false;
@@ -53,8 +53,8 @@ ngResize.factory('resize', ['$window', '$interval', '$rootScope', function($wind
       w.triggerHandler('resize');
       $rootScope.catchResize = true;
     },
-    set: function(){
-      if (!this.check()) this.bind();
+    bind: function(){
+      if (!this.checkBind()) return this.setBind();
     }
   };
 }]);
@@ -70,7 +70,7 @@ ngResize.directive('ngResize', ['$parse', '$timeout', 'resize', function($parse,
     compile: function($element, attr) {
       var fn = $parse(attr['ngResize']);
       return function(scope, element, attr) {
-        resize.set();
+        resize.bind();
         scope.$on('resize', function(event, data) {
           $timeout(function() {
             scope.$apply(function() {
