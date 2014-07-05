@@ -4,7 +4,7 @@ app.directive('resizeTest', ['resize', function(resize){
   return{
     restrict:'A',
     controller: function($scope){
-      resize.set();
+      resize.bind();
       $scope.$on('resize', function(data, $event){
         $scope.size = $event;
       });
