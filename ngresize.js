@@ -57,7 +57,7 @@ ngResize.provider('resize', [function resizeProvider(){
     // trigger a resize event on provided $scope or $rootScope
     function trigger($scope){
       var $scope = $scope || $rootScope;
-      $rootScope.$broadcast('resize', {
+      $scope.$broadcast('resize', {
         width: $window.innerWidth,
         height: $window.innerHeight
       });
