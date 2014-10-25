@@ -51,7 +51,7 @@ name | description
 <pre>unbind()</pre> | Unbinds resize even from $window
 
 ###Directive
-Something worth noting is that when the resize event is triggered, $timeout is used to debounce the expression to the end of the current $digest. The is to try and ensure that any costly calculations you might be doing won't interfere with the current $digest cycle. This approach was taken because resize events are often not crtical functionality points, but necessary to maintain ux/ ui stability. The goal is to provide efficient, useful access to resize events without crippling the ui.
+Something worth noting is that when the resize event is triggered, $timeout is used to debounce the expression to the end of the current $digest. This is to try and ensure that any costly calculations you might be doing won't interfere with the current $digest cycle. This approach was taken because resize events are often not crtical functionality points, but necessary to maintain ux/ ui stability. The goal is to provide efficient, useful access to resize events without crippling the ui.
 ```html
 <div ng-resize="setDimensions($event)"></div>
 ```
