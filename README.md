@@ -10,6 +10,12 @@ Angular module for managing resize events in your applications. Some of goals of
 ##Usage
 ngResize is composed of a provider, a service, and a directive. The service can be injected into other modules and used to programatically bind resize events in angular applications. The provider can be injected into your app's configuration phase to set things like throttle time.
 
+Set `ngResize` as a dependency in your module:
+
+```javascript
+var app = angular.module('YourApp', ['ngResize'])
+```
+
 ###Provider
 ```javascript
 app.config(['resizeProvider', function(resizeProvider){
