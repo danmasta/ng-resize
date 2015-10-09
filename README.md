@@ -7,7 +7,7 @@ Angular module for managing resize events in your applications. Some of goals of
 * Only bind resize event handler one time
 * Throttle resize events
 
-##Usage
+## Usage
 ngResize is composed of a provider, a service, and a directive. The service can be injected into other modules and used to programatically bind resize events in angular applications. The provider can be injected into your app's configuration phase to set things like throttle time.
 
 Set `ngResize` as a dependency in your module:
@@ -16,7 +16,7 @@ Set `ngResize` as a dependency in your module:
 var app = angular.module('YourApp', ['ngResize']);
 ```
 
-###Provider
+### Provider
 ```javascript
 app.config(['resizeProvider', function(resizeProvider){
 	
@@ -27,13 +27,13 @@ app.config(['resizeProvider', function(resizeProvider){
 	resizeProvider.initBind = false;
 }]);
 ```
-####Properties
+#### Properties
 name | description
 ---- | ----
 `throttle` | Throttle time for resize events, default is 100
 `initBind` | Boolean to determine if we should bind resize event when service object is created, default is true
 
-###Service
+### Service
 ```javascript
 app.directive('someDirective', ['resize', function(resize){
 	return{
@@ -55,7 +55,7 @@ app.directive('someDirective', ['resize', function(resize){
 	};
 }]);
 ```
-####Methods
+#### Methods
 name | description
 ---- | ----
 `getThrottle()` | Returns current throttle time
@@ -64,13 +64,13 @@ name | description
 `bind()` | Bind resize event to $window, only useful if initBind = false or event has been unbound
 `unbind()` | Unbinds resize even from $window
 
-###Directive
+### Directive
 Something worth noting is that when the resize event is triggered, $timeout is used to debounce the expression to the end of the current $digest. This is to try and ensure that any costly calculations you might be doing won't interfere with the current $digest cycle. This approach was taken because resize events are often not crtical functionality points, but necessary to maintain ux/ ui stability. The goal is to provide efficient, useful access to resize events without crippling the ui.
 ```html
 <div ng-resize="setDimensions($event)"></div>
 ```
 
-##Roadmap
+## Roadmap
 A few things I'm interested in pursuing with this project in the future are:
 
 * option to disable $rootScope $broadcast
