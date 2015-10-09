@@ -27,6 +27,7 @@ app.config(['resizeProvider', function(resizeProvider){
 	resizeProvider.initBind = false;
 }]);
 ```
+
 #### Properties
 name | description
 ---- | ----
@@ -55,6 +56,7 @@ app.directive('someDirective', ['resize', function(resize){
 	};
 }]);
 ```
+
 #### Methods
 name | description
 ---- | ----
