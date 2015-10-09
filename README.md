@@ -13,48 +13,56 @@ ngResize is composed of a provider, a service, and a directive. The service can 
 Set `ngResize` as a dependency in your module:
 
 ```javascript
-var app = angular.module('YourApp', ['ngResize'])
+var app = angular.module('YourApp', ['ngResize']);
 ```
 
 ###Provider
 ```javascript
 app.config(['resizeProvider', function(resizeProvider){
-  resizeProvider.throttle = 100;
-  resizeProvider.initBind = false;
+	
+	// set throttle time
+	resizeProvider.throttle = 100;
+	
+	// don't bind resize events on service innitialization
+	resizeProvider.initBind = false;
 }]);
 ```
 ####Properties
 name | description
 ---- | ----
-<pre>throttle</pre> | Throttle time for resize events, default is 100
-<pre>initBind</pre> | Boolean to determine if we should bind resize event when service object is created, default is true
+`throttle` | Throttle time for resize events, default is 100
+`initBind` | Boolean to determine if we should bind resize event when service object is created, default is true
 
 ###Service
 ```javascript
 app.directive('someDirective', ['resize', function(resize){
-  return{
-    controller: function($scope){
-      $scope.setDimensions = function($event){
-        $scope.width = $event.width;
-        $scope.height = $event.height;
-      }
-    },
-    link: function($scope, $element, $attributes, controller){
-      $scope.$on('resize', function($event){
-        $scope.setDimensions($event);
-      });
-    }
-  };
+	return{
+		controller: function($scope){
+		
+			// sets current window dimensions on $scope
+			$scope.setDimensions = function($event){
+				$scope.width = $event.width;
+				$scope.height = $event.height;
+			};
+		},
+		link: function($scope, $element, $attributes, controller){
+			
+			// on resize event, set dimensions
+			$scope.$on('resize', function($event){
+				$scope.setDimensions($event);
+			});
+		}
+	};
 }]);
 ```
 ####Methods
 name | description
 ---- | ----
-<pre>getThrottle()</pre> | Returns current throttle time
-<pre>setThrottle(integer)</pre> | Sets current throttle time, applies to entire app
-<pre>trigger($scope)</pre> | $broadcast a resize event, defaults from $rootScope, with option to trigger in specified $scope
-<pre>bind()</pre> | Bind resize event to $window, only useful if initBind = false or event has been unbound
-<pre>unbind()</pre> | Unbinds resize even from $window
+`getThrottle()` | Returns current throttle time
+`setThrottle(integer)` | Sets current throttle time, applies to entire app
+`trigger($scope)` | $broadcast a resize event, defaults from $rootScope, with option to trigger in specified $scope
+`bind()` | Bind resize event to $window, only useful if initBind = false or event has been unbound
+`unbind()` | Unbinds resize even from $window
 
 ###Directive
 Something worth noting is that when the resize event is triggered, $timeout is used to debounce the expression to the end of the current $digest. This is to try and ensure that any costly calculations you might be doing won't interfere with the current $digest cycle. This approach was taken because resize events are often not crtical functionality points, but necessary to maintain ux/ ui stability. The goal is to provide efficient, useful access to resize events without crippling the ui.
