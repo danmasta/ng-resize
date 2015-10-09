@@ -17,3 +17,11 @@ app.directive('resizeTest', ['resize', function(resize){
     }
   };
 }]);
+
+(function(window, document){
+  var s = document.createElement('script'); 
+  s.type = 'text/javascript'; 
+  s.async = true;
+  s.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+})(window, window.document)

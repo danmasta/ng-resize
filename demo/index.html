@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+		<link rel="stylesheet" href="app.css">
+	</head>
+	<body>
+		<section>
+			<div class="container">
+				<div data-message>
+					<div class="alert alert-info message">
+						<span>window width: {{size.width}}</span>
+						<span>window height: {{size.height}}</span>
+					</div>
+				</div>
+				<ul resize-test></ul>
+			</div>
+		</section>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="dist/ng-resize.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

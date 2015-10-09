@@ -1,32 +1,33 @@
 {
-  "name": "ng-resize",
-  "version": "1.1.0",
-  "homepage":"https://github.com/danmasta/ngResize",
-  "authors": [
-    { "name" : "Daniel Smith",
-      "homepage" : "http://danmasta.com/"
-    }
-  ],
-  "description": "Manage resize events in Angular applications",
-  "main": "./ngresize.js",
-  "keywords": [
-    "lightweight",
-    "ui",
-    "resize",
-    "angular",
-    "javascript"
-  ],
-  "dependencies": {
-    "angular": ">= 1.0.8"
-  },
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "component.json",
-    "package.json",
-    "tests",
-    "gulpfile.js",
-    "demo"
-  ]
+	"name": "ng-resize",
+	"version": "1.2.0",
+	"homepage":"https://github.com/danmasta/ng-resize",
+	"authors": [
+		{
+			"name" : "Daniel Smith",
+			"homepage" : "http://danmasta.com/"
+		}
+	],
+	"description": "Manage resize events in Angular applications",
+	"main": "./index.js",
+	"keywords": [
+		"lightweight",
+		"ui",
+		"resize",
+		"angular",
+		"javascript"
+	],
+	"dependencies": {
+		"angular": ">= 1.0.8"
+	},
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"component.json",
+		"package.json",
+		"tests",
+		"gulpfile.js",
+		"demo"
+	]
 }
