@@ -49,7 +49,7 @@ app.directive('someDirective', ['resize', function(resize){
 		link: function($scope, $element, $attributes, controller){
 			
 			// on resize event, set dimensions
-			$scope.$on('resize', function($event){
+			$scope.$on('resize', function(data, $event){
 				$scope.setDimensions($event);
 			});
 		}
