@@ -1,4 +1,4 @@
-#ngResize
+# ngResize
 
 Angular module for managing resize events in your applications. Some of goals of this project worth noting include:
 
