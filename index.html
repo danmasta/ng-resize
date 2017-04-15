@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html ng-app="app">
-	<head>
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-		<link rel="stylesheet" href="app.css">
-	</head>
-	<body>
-		<section>
-			<div class="container">
-				<div data-message>
-					<div class="alert alert-info message">
-						<span>window width: {{size.width}}</span>
-						<span>window height: {{size.height}}</span>
-					</div>
-				</div>
-				<ul resize-test></ul>
-			</div>
-		</section>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="dist/ng-resize.js"></script>
-		<script src="app.js"></script>
-	</body>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="app.css">
+    </head>
+
+    <body>
+
+        <div class="container" resize-test>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <span class="size-item m-width">window width:<br/>{{size.width}}</span>
+                </div>
+                <div class="col-6">
+                    <span class="size-item m-height">window height:<br/>{{size.height}}</span>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+        <script src="ng-resize.js"></script>
+        <script src="app.js"></script>
+
+    </body>
+
 </html>
