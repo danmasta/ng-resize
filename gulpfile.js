@@ -34,7 +34,9 @@ gulp.task('server', ['build'], function(done){
 
     app.use(express.static('demo'));
     app.use(express.static('dist'));
-    console.log('[development] dev server listening on: 8080');
+
+    console.log('[development] server listening on: 8080');
+
     app.listen(8080, done);
 
 });
