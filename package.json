@@ -1,6 +1,6 @@
 {
   "name": "ng-resize",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Daniel Smith <dannmasta@gmail.com>",
   "description": "Manage resize events in Angular applications",
   "keywords": [
