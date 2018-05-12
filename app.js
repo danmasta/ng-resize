@@ -5,12 +5,12 @@ app.directive('resizeTest', ['resize', function(resize){
         restrict:'A',
         controller: function($scope){
 
-            $scope.$on('resize', function(data, $event){
-                $scope.size = $event;
+            $scope.$on('resize', function($event, data){
+                $scope.size = data;
             });
 
         },
-        link:function($scope, $element, $attribute){
+        link:function($scope, $elem, $attr){
 
         }
     };
