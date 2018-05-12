@@ -87,7 +87,7 @@
             this.bind = bind;
             this.unbind = unbind;
 
-            // bind to window resize event when service created
+            // bind window resize event when service created
             if (resize.initBind) {
                 resize.bind();
             }
