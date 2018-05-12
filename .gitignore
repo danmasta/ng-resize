@@ -1,9 +1,9 @@
-logs/*
-!.gitkeep
+logs/
 node_modules/
-bower_components/
-tmp
+tmp/
+pages/
+build/
 .DS_Store
 .idea
-pages
-build
+.log
+.vscode
